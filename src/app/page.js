@@ -1,5 +1,6 @@
 // nextjs components
 import Image from "next/image";
+import Link from "next/link";
 
 // custom components
 import Title from "@/components/typography/Title";
@@ -63,7 +64,9 @@ export default function Home() {
 
             {/* CTA button for booking */}
             <div>
-              <PrimaryButton>Book a tour</PrimaryButton>
+              <Link href="/booking" className="inline-block">
+                <PrimaryButton>Book a tour</PrimaryButton>
+              </Link>
             </div>
 
             {/* Graphic images for design */}
@@ -115,7 +118,9 @@ export default function Home() {
               </SectionBody>
 
               {/* CTA that navigates to a detailed about page */}
-              <SecondaryButton>Learn more</SecondaryButton>
+              <Link href="/about" className="inline-block">
+                <SecondaryButton>Learn more</SecondaryButton>
+              </Link>
             </div>
 
             {/* Image of a daycare */}
@@ -147,8 +152,11 @@ export default function Home() {
                   Offering full-day learning, play, and discovery in a warm home
                   environment.
                 </SubHeading>
+
                 {/* CTA that navigates to a detailed program page */}
-                <SecondaryButton>Learn more</SecondaryButton>
+                <Link href="/program" className="inline-block">
+                  <SecondaryButton>Learn more</SecondaryButton>
+                </Link>
               </div>
             </div>
 

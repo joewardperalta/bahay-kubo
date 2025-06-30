@@ -1,12 +1,13 @@
 import clsx from "clsx";
 import Button from "./button";
 
-export default function PrimaryButton({ children, className }) {
+export default function PrimaryButton({ children, className, onClick }) {
   return (
     <div className="w-fit relative">
       <Button
+        onClick={onClick}
         className={clsx(
-          "bg-accent relative -top-1 hover:top-0 transition-all duration-[400ms]",
+          "bg-accent relative -top-1 hover:top-0 transition-all duration-[400ms] cursor-pointer",
           className
         )}
       >

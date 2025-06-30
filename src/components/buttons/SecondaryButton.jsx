@@ -1,9 +1,10 @@
 import Button from "./button";
 
-export default function SecondaryButton({ children }) {
+export default function SecondaryButton({ children, onClick }) {
   return (
     <Button
-      className="border-[2px] border-primary hover:bg-primary hover:text-white duration-[400ms]"
+      onClick={onClick}
+      className="border-[2px] border-primary hover:bg-primary hover:text-white duration-[400ms] cursor-pointer"
       size="md"
     >
       {children}

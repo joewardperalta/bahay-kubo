@@ -48,7 +48,9 @@ export default function Navbar() {
 
       {/* CTA */}
       <div>
-        <SecondaryButton>Contact us</SecondaryButton>
+        <Link href="/contact" className="inline-block">
+          <SecondaryButton>Contact us</SecondaryButton>
+        </Link>
       </div>
     </div>
   );
