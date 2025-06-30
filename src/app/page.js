@@ -15,6 +15,7 @@ import Paragraph from "@/components/typography/Paragraph";
 import SecondaryButton from "@/components/buttons/SecondaryButton";
 import SectionLabel from "@/components/typography/SectionLabel";
 import ProgramCard from "@/components/ProgramCard";
+import MiniFeatureCard from "@/components/MiniFeatureCard";
 
 const programList = [
   {
@@ -104,7 +105,7 @@ export default function Home() {
             <div>
               <Headline>
                 <SectionLabel>About us</SectionLabel>
-                <Heading>Healthy choices is my top priority</Heading>
+                <Heading>A home where little learners grow</Heading>
               </Headline>
 
               <SectionBody>
@@ -165,12 +166,98 @@ export default function Home() {
               {programList.map(({ image, title, description }) => {
                 return (
                   <ProgramCard
+                    key={title}
                     image={image}
                     title={title}
                     description={description}
                   />
                 );
               })}
+            </div>
+          </div>
+        </Wrapper>
+      </Section>
+
+      {/* About us section */}
+      <Section className="bg-tertiary">
+        <Wrapper>
+          <div className="flex gap-16 items-center">
+            <div className="w-full">
+              <Headline>
+                <SectionLabel>Health and nutrition</SectionLabel>
+                <Heading>Healthy choices is my top priority</Heading>
+              </Headline>
+
+              <SectionBody>
+                <Paragraph>
+                  I believe healthy eating is essential to every child&apos;s
+                  growth and learning. That&apos;s why I prepare and serve
+                  nutritious meals and snacks onsite—with a focus on variety,
+                  balance, and quality.
+                </Paragraph>
+
+                {/* Feature list */}
+                <div className="space-y-4">
+                  <MiniFeatureCard
+                    image={{
+                      src: "/images/apple.png",
+                      alt: "Milk",
+                    }}
+                    description="Healthy breakfast, lunch, and afternoon snack."
+                  />
+                  <MiniFeatureCard
+                    image={{
+                      src: "/images/milk.png",
+                      alt: "Milk",
+                    }}
+                    description="Organic milk with breakfast and snack, and water during lunch."
+                  />
+                  <MiniFeatureCard
+                    image={{
+                      src: "/images/hotfood.png",
+                      alt: "Hot food",
+                    }}
+                    description="A two-week rotating menu with occasional new recipes for variety."
+                  />
+                </div>
+              </SectionBody>
+
+              {/* CTA that navigates to a detailed about page */}
+              <Link href="/about" className="inline-block">
+                <SecondaryButton>Learn more</SecondaryButton>
+              </Link>
+            </div>
+
+            {/* Image of a daycare */}
+            <div className="w-full space-y-4">
+              <div>
+                <Image
+                  src="/images/food 3.png"
+                  width={656}
+                  height={304}
+                  alt="bahay kubo daycare food 3"
+                  className="w-full"
+                />
+              </div>
+
+              <div className="flex gap-4">
+                <div>
+                  <Image
+                    src="/images/food 1.png"
+                    width={656}
+                    height={304}
+                    alt="bahay kubo daycare food 3"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/images/food 2.png"
+                    width={656}
+                    height={304}
+                    alt="bahay kubo daycare food 3"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </Wrapper>
