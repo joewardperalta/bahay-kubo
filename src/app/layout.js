@@ -1,5 +1,6 @@
 import { Fredoka } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -14,7 +15,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${fredoka.className} antialiased`}>{children}</body>
+      <body className={`${fredoka.className} antialiased`}>
+        <div>
+          <Navbar />
+        </div>
+
+        {children}
+      </body>
     </html>
   );
 }
