@@ -14,7 +14,7 @@ export default function Home() {
     <main>
       <Section>
         <Wrapper>
-          <div>
+          <div className="relative">
             <Headline>
               <Title>Nurturing care for ages 18 months to 5 years</Title>
               <SubHeading>
@@ -27,6 +27,31 @@ export default function Home() {
             {/* CTA button for booking */}
             <div>
               <PrimaryButton>Book a tour</PrimaryButton>
+            </div>
+
+            {/* Graphic images for design */}
+            <div className="absolute w-1/2 h-full right-0 top-0 -z-10">
+              <Image
+                src="/images/map.png"
+                width={200}
+                height={200}
+                alt="map"
+                className="absolute right-[50%]"
+              />
+              <Image
+                src="/images/brain.png"
+                width={200}
+                height={200}
+                alt="map"
+                className="absolute right-[0]"
+              />
+              <Image
+                src="/images/books.png"
+                width={200}
+                height={200}
+                alt="map"
+                className="absolute right-[30%] bottom-0"
+              />
             </div>
           </div>
         </Wrapper>
