@@ -1,8 +1,23 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import SecondaryButton from "./buttons/SecondaryButton";
+import clsx from "clsx";
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/program", label: "Program" },
+  { href: "/nutrition", label: "Nutrition" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/faq", label: "FAQ" },
+];
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
     <div className="px-8 py-4 flex justify-between items-center max-w-[1440px] mx-auto">
       {/* Logo */}
@@ -12,22 +27,23 @@ export default function Navbar() {
 
       {/* Nav menu */}
       <nav>
-        <ul className="flex gap-6 font-medium text-primary items-center h-full">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/program">Program</Link>
-          </li>
-          <li>
-            <Link href="/nutrition">Nutrition</Link>
-          </li>
-          <li>
-            <Link href="/pricing">Pricing</Link>
-          </li>
+        <ul className="flex gap-6 font-medium text-secondary items-center h-full">
+          {navItems.map(({ href, label }) => {
+            return (
+              <li>
+                <Link
+                  key={href}
+                  href={href}
+                  className={clsx(
+                    "hover:text-primary duration-[400ms]",
+                    pathname == href && "text-primary"
+                  )}
+                >
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
 
