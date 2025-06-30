@@ -1,5 +1,5 @@
 import Image from "next/image";
 
 export default function Wrapper({ children }) {
-  return <div></div>;
+  return <div className="px-8">{children}</div>;
 }
