@@ -3,7 +3,7 @@ import Button from "./button";
 export default function SecondaryButton({ children }) {
   return (
     <Button
-      className="border-[2px] border-primary hover:bg-primary hover:text-white"
+      className="border-[2px] border-primary hover:bg-primary hover:text-white duration-[400ms]"
       size="md"
     >
       {children}
