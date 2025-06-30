@@ -13,6 +13,37 @@ import SectionBody from "@/components/SectionBody";
 import Paragraph from "@/components/typography/Paragraph";
 import SecondaryButton from "@/components/buttons/SecondaryButton";
 import SectionLabel from "@/components/typography/SectionLabel";
+import ProgramCard from "@/components/ProgramCard";
+
+const programList = [
+  {
+    image: {
+      src: "/images/free active play.png",
+      alt: "free active play daycare",
+    },
+    title: "Free active play",
+    description:
+      "Children enjoy open-ended playtime that builds confidence, coordination, and motor skills through movement and discovery.",
+  },
+  {
+    image: {
+      src: "/images/indoor activities.png",
+      alt: "Indoor activities daycare",
+    },
+    title: "Indoor activities",
+    description:
+      "Engaging indoor play like reading, puzzles, and building blocks encourages creativity, focus, and imaginative thinking in a calm, cozy environment.",
+  },
+  {
+    image: {
+      src: "/images/outdoor activities.png",
+      alt: "Outdoor activities daycare",
+    },
+    title: "Outdoor activities",
+    description:
+      "Outdoor adventures like running, climbing, and sandbox play help children stay active, explore nature, and develop physical strength.",
+  },
+];
 
 export default function Home() {
   return (
@@ -96,6 +127,42 @@ export default function Home() {
                 alt="Bahay kubo daycare photo of a child writing on a notebook"
                 className="w-full h-full"
               />
+            </div>
+          </div>
+        </Wrapper>
+      </Section>
+
+      {/* Program & daily schedule section */}
+      <Section>
+        <Wrapper>
+          <div className="space-y-16">
+            <div className="flex justify-between">
+              <Headline>
+                <Heading>Our program & daily schedule</Heading>
+              </Headline>
+
+              <div>
+                <SubHeading>
+                  We&apos;re open Monday to Friday from 8:00 AM to 5:00 PM.
+                  Offering full-day learning, play, and discovery in a warm home
+                  environment.
+                </SubHeading>
+                {/* CTA that navigates to a detailed program page */}
+                <SecondaryButton>Learn more</SecondaryButton>
+              </div>
+            </div>
+
+            {/* Image of a daycare */}
+            <div className="flex gap-6">
+              {programList.map(({ image, title, description }) => {
+                return (
+                  <ProgramCard
+                    image={image}
+                    title={title}
+                    description={description}
+                  />
+                );
+              })}
             </div>
           </div>
         </Wrapper>

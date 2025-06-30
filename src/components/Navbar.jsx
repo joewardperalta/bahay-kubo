@@ -22,7 +22,7 @@ export default function Navbar() {
     <div className="px-8 py-4 flex justify-between items-center max-w-[1440px] mx-auto">
       {/* Logo */}
       <div>
-        <Image src="/images/Logo.png" width={104} height={83.31} alt="logo" />
+        <Image src="/images/logo.png" width={104} height={83.31} alt="logo" />
       </div>
 
       {/* Nav menu */}
