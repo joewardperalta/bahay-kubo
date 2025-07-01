@@ -178,7 +178,7 @@ export default function Home() {
         </Wrapper>
       </Section>
 
-      {/* About us section */}
+      {/* Nutrition section */}
       <Section className="bg-tertiary">
         <Wrapper>
           <div className="flex gap-16 items-center">
@@ -257,6 +257,59 @@ export default function Home() {
                     alt="bahay kubo daycare food 3"
                   />
                 </div>
+              </div>
+            </div>
+          </div>
+        </Wrapper>
+      </Section>
+
+      {/* What sets us apart section */}
+      <Section>
+        <Wrapper>
+          <Headline className="text-center flex flex-col items-center">
+            <Heading>What sets us apart</Heading>
+            <SubHeading>
+              A nurturing home-based daycare where children feel safe, valued,
+              and inspired to grow through play and care.
+            </SubHeading>
+          </Headline>
+
+          {/* Gallery */}
+          <div className="space-y-4">
+            <div>
+              <Image
+                src="/images/daycare 1.png"
+                width={1376}
+                height={640}
+                alt="daycare"
+              />
+            </div>
+
+            <div className="flex gap-4">
+              <div>
+                <Image
+                  src="/images/daycare 2.png"
+                  width={1376}
+                  height={640}
+                  alt="daycare"
+                  className=""
+                />
+              </div>
+              <div>
+                <Image
+                  src="/images/daycare 3.png"
+                  width={1376}
+                  height={640}
+                  alt="daycare"
+                />
+              </div>
+              <div>
+                <Image
+                  src="/images/daycare 4.png"
+                  width={1376}
+                  height={640}
+                  alt="daycare"
+                />
               </div>
             </div>
           </div>
