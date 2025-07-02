@@ -16,6 +16,8 @@ import SecondaryButton from "@/components/buttons/SecondaryButton";
 import SectionLabel from "@/components/typography/SectionLabel";
 import ProgramCard from "@/components/ProgramCard";
 import MiniFeatureCard from "@/components/MiniFeatureCard";
+import ProcessCard from "@/components/ProcessCard";
+import QuestionCardDropDown from "@/components/QuestionCardDropDown";
 
 const programList = [
   {
@@ -44,6 +46,39 @@ const programList = [
     title: "Outdoor activities",
     description:
       "Outdoor adventures like running, climbing, and sandbox play help children stay active, explore nature, and develop physical strength.",
+  },
+];
+
+const faq = [
+  {
+    id: 1,
+    question: "What ages do you accept?",
+    answer:
+      "We welcome children aged 18 months to 5 years old, offering age-appropriate care, activities, and learning experiences designed to support each stage of early development.",
+  },
+  {
+    id: 2,
+    question: "What are your hours of operation?",
+    answer:
+      "We’re open Monday to Friday, from 8:00 AM to 5:00 PM. This full-day schedule supports working families with consistent, reliable care.",
+  },
+  {
+    id: 3,
+    question: "What meals or snacks are provided?",
+    answer:
+      "We provide a healthy breakfast, lunch, and afternoon snack, all prepared on-site. Meals are nutritious and balanced, with a rotating two-week menu. We also accommodate dietary restrictions and allergies.",
+  },
+  {
+    id: 4,
+    question: "What is your daily routine like?",
+    answer:
+      "Our day includes a mix of structured learning, free play, outdoor exploration, meals, and rest time. Children enjoy two hours of outdoor play daily (weather permitting), helping them stay active and engaged.",
+  },
+  {
+    id: 5,
+    question: "How do you handle illness, emergencies, or injuries?",
+    answer:
+      "For everyone’s safety, we follow clear health policies. Sick children are asked to stay home until symptom-free for 24 hours. In case of emergencies or injuries, parents are notified immediately, and we have detailed procedures in place to respond with care and caution.",
   },
 ];
 
@@ -311,6 +346,69 @@ export default function Home() {
                   alt="daycare"
                 />
               </div>
+            </div>
+          </div>
+        </Wrapper>
+      </Section>
+
+      {/* Process section */}
+      <Section className="bg-tertiary">
+        <Wrapper>
+          <Headline className="text-center flex flex-col items-center mb-12">
+            <SectionLabel>Process</SectionLabel>
+            <Heading>Here&apos;s how to join our daycare family</Heading>
+          </Headline>
+
+          <div className="flex">
+            <ProcessCard
+              image={{ src: "/images/process 1.png" }}
+              title="Schedule a tour"
+              description="Visit Bahay Kubo to explore our facilities, and learn more about our programs."
+            />
+            <ProcessCard
+              image={{ src: "/images/process 2.png" }}
+              title="Complete the application"
+              description="Fill out our enrollment form with key details about your child’s needs,  and schedule."
+            />
+            <ProcessCard
+              image={{ src: "/images/process 3.png" }}
+              title="Finalize the enrollment"
+              description="Meet with us to finalize the details, and set the start date for your child’s journey."
+            />
+          </div>
+        </Wrapper>
+      </Section>
+
+      {/* FAQ section */}
+      <Section>
+        <Wrapper>
+          <div className="flex justify-between items-center gap-16">
+            <div>
+              <Headline className="mb-12">
+                <Heading>Frequently asked questions</Heading>
+              </Headline>
+
+              {/* Question list */}
+              <SectionBody className="space-y-6">
+                {faq.map((item) => {
+                  return (
+                    <QuestionCardDropDown
+                      key={item.id}
+                      question={item.question}
+                      answer={item.answer}
+                    />
+                  );
+                })}
+              </SectionBody>
+            </div>
+
+            <div>
+              <Image
+                src="/images/daycare 5.png"
+                width={656}
+                height={624}
+                alt="daycare"
+              />
             </div>
           </div>
         </Wrapper>
